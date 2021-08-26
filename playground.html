@@ -1,0 +1,35 @@
+<html>
+
+    <head>
+    </head>
+
+    <body>
+        <h1>JS playground</h1>
+        <ul id='myList'></ul>
+        <script>
+            let users = [
+                {name: 'Tina ', age: '15'},
+                {name: 'Sara ', age: '25'},
+                {name: 'Luka ', age: '35'},
+                {name: 'Nina ', age: '43'} ,
+                {name: 'Ana ', age: '17'},
+                {name: 'Ivan ', age: '55'},
+                {name: 'Tomo ', age: '13'},
+                {name: 'Hana ', age: '20'}
+            ];
+
+            console.log(users);
+
+            users.forEach (function (element) {
+            const li = document.createElement('li');
+            const value1 = document.createTextNode('Name: ' + element.name);
+            const value2 = document.createTextNode('Age: ' + element.age)
+            li.append(value1, value2);   
+
+            document.getElementById('myList').appendChild(li);
+            });
+
+        </script>
+    </body>
+
+</html>
