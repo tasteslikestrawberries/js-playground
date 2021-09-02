@@ -75,3 +75,19 @@ const demoPromise = async (myPromise) => {
 }
 
 demoPromise();
+
+/////// sorting string of numbers into integer array (// Sort numerically because default is lexicographical sort)
+//https://medium.com/coding-at-dawn/how-to-sort-an-array-numerically-in-javascript-2b22710e3958
+
+const highAndLow = () => {
+    const numbers = "2 4 56 879 980";
+    const splitted = numbers.split(" ");
+    const sorted = splitted.sort((a,b)=>a-b);
+    console.log( sorted[0] + " " + sorted[sorted.length-1] ); //kata task is to return the lowest and highest number
+    console.log(sorted);
+  }
+  highAndLow();
+  
+  
+
+
