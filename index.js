@@ -1,4 +1,4 @@
-///tryouts
+//Map function
 const array = [1,2,3]
 const mappedArray = array.map(element => {
     return element*2
@@ -6,7 +6,7 @@ const mappedArray = array.map(element => {
 console.log(mappedArray)
 console.log(array)
 
-////
+//is Palindrome?
 
 const word = "radar";
 const isPalindrome = () => {
@@ -21,8 +21,7 @@ const isPalindrome = () => {
 
 isPalindrome()
 
-//////
-
+//forEach function
 const music = ["pop", "rock", "blues"]
 music.push("country")
 console.log(music)
@@ -33,7 +32,7 @@ music.forEach(element => {
     
 });
 
-//////setTimeout with arrow f.
+//setTimeout with arrow f.
 
 const learningPromise = () => {
     console.log("Hit");
@@ -45,7 +44,7 @@ const learningPromise = () => {
 
 learningPromise();
 
-//// classic js promise using constructor
+//classic js promise using constructor
 const myPromise = new Promise((resolve, reject) => {
     const condition = true;
     if (condition) {
@@ -60,7 +59,7 @@ const myPromise = new Promise((resolve, reject) => {
 
 console.log(myPromise)
 
-///// promise using async await
+//promise using async await
 const demoPromise = async (myPromise) => {
     try {
         const message = await myPromise;
@@ -76,7 +75,7 @@ const demoPromise = async (myPromise) => {
 
 demoPromise();
 
-/////// sorting string of numbers into integer array (// Sort numerically because default is lexicographical sort)
+//sorting string of numbers into integer array (// Sort numerically because default is lexicographical sort)
 //https://medium.com/coding-at-dawn/how-to-sort-an-array-numerically-in-javascript-2b22710e3958
 
 const highAndLow = () => {
@@ -88,6 +87,42 @@ const highAndLow = () => {
   }
   highAndLow();
   
+
+//find multiple missing numbers from array
+    function findMissingNumbers (arr1, arr2) { 
+
+    if (arr1 === arr2) {
+        console.log("There are no missing elements")
+        return;
+    }
+
+    const arr1Sorted = arr1.sort((a,b)=>a-b);
+    const arr2Sorted = arr2.sort((a,b)=>a-b);
+    
+    const resultArray = [];
+    let i=0, j=0;
+    while (i<arr1Sorted.length) {
+
+        if (arr1Sorted[i] !== arr2Sorted[j]) {
+            resultArray[resultArray.length] = arr1Sorted[i];
+            i++
+        } else {
+            i++;
+            j++
+        }
+    }
+    
+    return resultArray
+  }
+
+  const arr1 = [3, 2, 1, 4, 1, 5, 6];
+  const arr2 = [3, 2, 1];
+  const res = findMissingNumbers(arr1, arr2)
+  console.log(res)
+
+  ////
+
   
+
 
 
