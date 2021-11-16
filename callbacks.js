@@ -1,3 +1,5 @@
+//callbacks showcase
+
 const posts = [
   { title: "Post 1", body: "This is post one" },
   { title: "Post 2", body: "This is post two" },
