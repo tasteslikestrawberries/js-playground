@@ -1,26 +1,35 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js Playground.</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css.css" />
-    <h1>js Playground.</h1>
   </head>
-
   <body>
-    <h2 style='text-transform:uppercase;'>Calculator</h2>
-    <section class="calc">
-      <input type="number" />
-      <span id="outputResult">Result:</span>
-      <div id="result"></div>
-      <button id="btn-add">+</button>
-      <button id="btn-subtract">-</button>
-      <button id="btn-multiply">*</button>
-      <button id="btn-divide">/</button>
-  
-      <span id="currentCalculationOutput">Current calculation: </span>
-      <br/><br/>
-      <span id="currentResultOutput">Current result: </span>
-    </section>
+    <header>
+      <h1>Calculator</h1>
+    </header>
 
+    <section id="calculator">
+      <input type="number" id="input-number" />
+      <div id="calc-actions">
+        <button type="button" id="btn-add">+</button>
+        <button type="button" id="btn-subtract">-</button>
+        <button type="button" id="btn-multiply">*</button>
+        <button type="button" id="btn-divide">/</button>
+      </div>
+    </section>
+    <section id="results">
+      <h2 id="current-calculation">0</h2>
+      <h2>Result: <span id="current-result">0</span></h2>
+    </section>
     <script src="calculator.js"></script>
+
     <!-- <script src='callbacks.js'></script> -->
     <!-- <script src='promises.js'></script> -->
     <!-- <script src='asyncawait.js'></script> -->

@@ -1,26 +1,27 @@
-let currentResult=0;
-
-const userInput = document.getElementById('input');
+//vendor
+const userInput = document.getElementById('input-number');
 const addBtn = document.getElementById('btn-add');
 const subtractBtn = document.getElementById('btn-subtract');
 const multiplyBtn = document.getElementById('btn-multiply');
 const divideBtn = document.getElementById('btn-divide');
 
-const currentResultOutput = document.getElementById('currentResultOutput');
-const currentCalculationOutput = document.getElementById('currentCalculationOutput');
+const currentResultOutput = document.getElementById('current-result');
+const currentCalculationOutput = document.getElementById('current-calculation');
 
-outputResult = (result, text) => {
+function outputResult(result, text) {
   currentResultOutput.textContent = result;
   currentCalculationOutput.textContent = text;
 }
 
-const userInput = 50;
-let result;
 
-result = 18 + userInput;
-result = result - 10;
-result = result * 5;
-result = result / 2;
+//app
+const defaultResult = 0;
+let currentResult = defaultResult;
 
-alert(result);
-alert(userInput);
+function add() {
+  currentResult = currentResult + userInput.value;
+  outputResult(currentResult, '');
+}
+
+addBtn.addEventListener('click', add);
+
