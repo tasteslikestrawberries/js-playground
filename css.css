@@ -1,0 +1,30 @@
+body{
+  color:rgb(32, 32, 32);
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+input {
+  width: 25vw;
+  height:10vh;
+  font-size:x-large;
+}
+
+button {
+  color:rgb(59, 89, 255);
+  padding:0 1rem;
+  font-size:xx-large;
+  margin:1rem;
+  background-color: rgb(244, 246, 255);
+  border: 5px solid rgb(66, 94, 255);
+  cursor:pointer;
+}
+
+.calc {
+  margin:auto;
+  display:flex;
+  flex-direction: column;
+  width:30vw;
+  justify-content: center;
+  align-items: center;
+}
