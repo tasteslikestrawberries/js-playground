@@ -56,13 +56,55 @@ let myNumbers = [5, 6, 7, 8];
 const foundNumber = myNumbers.find((number) => number > 5 );
 console.log(foundNumber);
 
+//FOREACH() - useful if you need an index (for-of doesn't give you access to index, and in regular for loop you have to manually handle it)
+const prices = [10.99, 5.99, 3.99, 6.59];
+const tax = 0.19;
+const taxAdjustedPrices = [];
+
+// for (const price of prices) {
+//   taxAdjustedPrices.push(price * (1 + tax));
+// }
+
+prices.forEach((price, idx, prices) => {
+  const priceObj = { index: idx, taxAdjPrice: price * (1 + tax) };
+  taxAdjustedPrices.push(priceObj);
+});
+
+//console.log(taxAdjustedPrices);
+
+//SORT() AND REVERSE()
+const sortedPrices = prices.sort((a, b) => {
+  if (a > b) {
+    return -1;
+  } else if (a === b) {
+    return 0;
+  } else {
+    return 1;
+  }
+});
+console.log(sortedPrices);
+
+//reverse the previously sorted array
+console.log(sortedPrices.reverse());
+
+
 //MAP()
 let people = [
   { name: "Manuel", surname: "Lol" },
   { name: "Tin", surname: "Col" },
   { name: "Anita", surname: "Phills" },
 ];
+
+/* - with {} you have to manually return
+const happyPeople = people.map( (person) => {
+  const isHappy = person.name + " " + "is" + " " + "Happy";
+  return isHappy
+});
+
+console.log(happyPeople);*/
+
+//returns automatically
 const happyPeople = people.map(
-  (person) => person.name + " " + "is" + " " + "Happy"
+  (person) =>  person.name + " " + "is" + " " + "Happy"
 );
-console.log(happyPeople);
+//console.log(happyPeople);
