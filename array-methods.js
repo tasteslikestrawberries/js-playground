@@ -87,6 +87,10 @@ console.log(sortedPrices);
 //reverse the previously sorted array
 console.log(sortedPrices.reverse());
 
+//sort integers
+const numberArray=[5,6,3,2,1,8]
+//console.log(numberArray.sort((a, b) => (a - b)));
+
 
 //MAP()
 let people = [
@@ -108,3 +112,11 @@ const happyPeople = people.map(
   (person) =>  person.name + " " + "is" + " " + "Happy"
 );
 //console.log(happyPeople);
+
+//FILTER
+function filterOut(arr) {
+  const filteredArr = arr.filter( (element) => element % 2 === 0)
+  console.log(filteredArr)
+}
+
+filterOut([1,2,3,4,5,6,7,8,9,10])
