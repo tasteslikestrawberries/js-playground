@@ -20,3 +20,16 @@ button {
   cursor:pointer;
 }
 
+/*variables in vanilla css*/
+
+:root{
+  --primary-color: #03a04a;
+  --accent-color: #184fb4;
+  --text-color: #000000;
+}
+
+.test{
+  width:2rem;
+  height:2rem;
+  background-color: var(--primary-color);
+}
