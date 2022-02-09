@@ -42,6 +42,8 @@ const myObj = {
 
 //if object is undefined, set a default values
 //const myFunc = ({ color = "default color", shape = "default shape" } = {}) =>
-const myFunc = ({ color, shape } = myObj) =>
-  console.log("This is a" + " " + color.concat(" ", shape));
-myFunc();
+//const myFunc = ({ color, shape } = {}) =>
+const myFunc = ({ color, shape }) =>
+  //console.log("This is a".concat(" ",color, " ", shape));
+  console.log(`This is a ${color} ${shape}`) //use this for string concatation
+myFunc(myObj);

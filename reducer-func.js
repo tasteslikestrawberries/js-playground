@@ -12,8 +12,8 @@ items.forEach( item => {
 })*/
 
 //with reducer
-const totalPrice = items.reduce((total, item) => {
-  return total + item.price;
+const totalPrice = items.reduce((acc, item) => {
+  return acc + item.price;
 }, 0);
 
 console.log(totalPrice);

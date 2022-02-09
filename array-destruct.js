@@ -1,17 +1,24 @@
-let a = 8, b = 6;
+let a = 8,
+  b = 6;
 
-[a,b] = [b,a]
+[a, b] = [b, a];
 
-console.log(b,a)
+console.log(b, a);
 
 //destructuring with rest parameter
-const source = [1,2,3,4,5,6,7,8,9,10];
-function removeFirstTwo(list) {
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+function removeFirstTwo(someArr) {
+  const [, , ...myArr] = someArr;
 
-  const [,, ...arr] = list; 
-
-  return arr;
+  return myArr;
 }
 const arr = removeFirstTwo(source);
 
-console.log(arr)
+console.log(arr);
+
+//do the same thing using filter()
+function mapArr(arr) {
+  return arr.filter((val, idx) => (idx > 1 ? val : undefined));
+}
+
+console.log(mapArr(source));
