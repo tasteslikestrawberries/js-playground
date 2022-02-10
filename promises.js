@@ -1,11 +1,25 @@
 //promises showcase
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer is set to true to represent a successful response from a server
+  let responseFromServer = true;
 
+  if (responseFromServer) {
+    resolve("We got the data");
+  } else {
+    reject("Data not received");
+  }
+});
+
+makeServerRequest
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error));
+
+//mimicking fetching from a server
 const posts = [
   { title: "Post 1", body: "This is post one" },
   { title: "Post 2", body: "This is post two" },
 ];
 
-//mimicking fetching from a server
 function getPosts() {
   setTimeout(() => {
     let output = "";
@@ -32,11 +46,12 @@ function createPost(post) {
   });
 }
 
-/* createPost({
-  title: 'Post 3',
-  body: 'This is post 3'
-}).then(getPosts)
-.catch(err => console.log(err)); */
+createPost({
+  title: "Post 3",
+  body: "This is post 3",
+})
+  .then(getPosts)
+  .catch((err) => console.log(err));
 
 //Promise.all() showcase
 const promise1 = Promise.resolve("Hello world");
