@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "@js-temporal/polyfill": "^0.4.1"
+  },
+  "name": "js-playground",
+  "version": "1.0.0",
+  "main": "algos.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tasteslikestrawberries/js-playground.git"
+  },
+  "author": "Anja",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tasteslikestrawberries/js-playground/issues"
+  },
+  "homepage": "https://github.com/tasteslikestrawberries/js-playground#readme",
+  "description": "",
+  "type": "module"
+}
