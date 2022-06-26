@@ -1,4 +1,4 @@
-import { Temporal, Intl, toTemporalInstant } from '@js-temporal/polyfill'; //not yet in stage 4 but soon - until then have to use polyfill
+import { Temporal, toTemporalInstant } from '@js-temporal/polyfill'; //not yet in stage 4 but soon - until then have to use polyfill
 Date.prototype.toTemporalInstant = toTemporalInstant;
 
 const now = new Date();

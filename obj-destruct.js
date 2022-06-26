@@ -46,4 +46,4 @@ const myObj = {
 const myFunc = ({ color, shape }) =>
   //console.log("This is a".concat(" ",color, " ", shape));
   console.log(`This is a ${color} ${shape}`) //use this for string concatation
-myFunc(myObj);
+myFunc(myObj); //have to call the function with the object name as argument

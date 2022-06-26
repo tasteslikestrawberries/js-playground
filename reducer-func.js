@@ -16,7 +16,7 @@ const totalPrice = items.reduce((acc, item) => {
   return acc + item.price;
 }, 0);
 
-console.log(totalPrice);
+//console.log(totalPrice);
 
 // EXAMPLE 2
 //with a loop
@@ -43,4 +43,21 @@ const sum = numbers.reduce((accumulator, currentValue) => {
 }, 0); /*the second argument of the reduce method is the initial value of the accumulator - if we don't specify it, the first element
 of the array will be used as the initial value*/
 
-console.log(sum);
+//console.log(sum);
+
+//CREATE NEW OBJECT WITH REDUCER
+
+const peopleArr = [
+  { id: 1, name: "Anna", age: 23, active: true },
+  { id: 2, name: "Joe", age: 33, active: false },
+  { id: 3, name: "Sara", age: 42, active: false },
+  { id: 4, name: "Noah", age: 18, active: true },
+];
+
+const activePeople = peopleArr.reduce( (acc, e) => {
+  if (e.active) {
+    acc.push(e.name)
+  }
+  return acc
+}, [])
+console.log(activePeople)

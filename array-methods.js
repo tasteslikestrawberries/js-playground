@@ -53,7 +53,7 @@ const myArr = ["Apple", "Banana", "Kiwi", "Pasta"];
 //FIND() - returns the value of the first element in the provided array that satisfies the provided testing function.
 //If no values satisfy the testing function, undefined is returned
 let myNumbers = [5, 6, 7, 8];
-const foundNumber = myNumbers.find((number) => number > 5 );
+const foundNumber = myNumbers.find((number) => number > 5);
 console.log(foundNumber);
 
 //FOREACH() - useful if you need an index (for-of doesn't give you access to index, and in regular for loop you have to manually handle it)
@@ -88,9 +88,8 @@ console.log(sortedPrices);
 console.log(sortedPrices.reverse());
 
 //sort integers
-const numberArray=[5,6,3,2,1,8]
+const numberArray = [5, 6, 3, 2, 1, 8];
 //console.log(numberArray.sort((a, b) => (a - b)));
-
 
 //MAP()
 let people = [
@@ -109,14 +108,44 @@ console.log(happyPeople);*/
 
 //returns automatically
 const happyPeople = people.map(
-  (person) =>  person.name + " " + "is" + " " + "Happy"
+  (person) => person.name + " " + "is" + " " + "Happy"
 );
 //console.log(happyPeople);
 
 //FILTER
 function filterOut(arr) {
-  const filteredArr = arr.filter( (element) => element % 2 === 0)
-  console.log(filteredArr)
+  const filteredArr = arr.filter((element) => element % 2 === 0);
+  console.log(filteredArr);
 }
 
-filterOut([1,2,3,4,5,6,7,8,9,10])
+filterOut([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+//MAP AND FILTER (filter active users/map by name)
+const peopleArr = [
+  { id: 1, name: "Anna", age: 23, active: true },
+  { id: 2, name: "Joe", age: 33, active: false },
+  { id: 3, name: "Sara", age: 42, active: false },
+  { id: 4, name: "Noah", age: 18, active: true },
+];
+
+const activePeople = peopleArr
+  .filter((person) => person.active)
+  .map((person) => person.name);
+//console.log(activePeople);
+
+//THE ABOVE WITH REDUCE
+const activePeopleReduced = peopleArr.reduce((acc, e) => {
+  if (e.active) {
+    acc.push(e.name);
+  }
+  return acc;
+}, []);
+//console.log(activePeopleReduced)
+
+//REDUCE TO OBJECT
+const reducedObj = peopleArr.reduce((acc, item) => {
+    acc[item.id] = item.name;
+    return acc;
+}, {});
+
+console.log(reducedObj);
