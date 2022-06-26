@@ -39,12 +39,6 @@ const arr2 = [4, 5, 6];
 const concatedArray = arr1.concat(arr2);
 //console.log(concatedArray)
 
-//SPREAD OPERATOR
-const arr3 = [1, 2, 3];
-const arr4 = [4, 5, 6];
-const spreadedArr = [...arr3, ...arr4];
-//console.log(spreadedArr);
-
 //INDEXOF() - returns the index of the first occurence of a value in an array, or -1 if it is not present
 const myArr = ["Apple", "Banana", "Kiwi", "Pasta"];
 //console.log(myArr.indexOf('Kiwi'))
@@ -54,9 +48,10 @@ const myArr = ["Apple", "Banana", "Kiwi", "Pasta"];
 //If no values satisfy the testing function, undefined is returned
 let myNumbers = [5, 6, 7, 8];
 const foundNumber = myNumbers.find((number) => number > 5);
-console.log(foundNumber);
+//console.log(foundNumber);
 
 //FOREACH() - useful if you need an index (for-of doesn't give you access to index, and in regular for loop you have to manually handle it)
+//doesn't have a return value, always returns undefined!
 const prices = [10.99, 5.99, 3.99, 6.59];
 const tax = 0.19;
 const taxAdjustedPrices = [];
@@ -72,6 +67,17 @@ prices.forEach((price, idx, prices) => {
 
 //console.log(taxAdjustedPrices);
 
+//CONVERT ARRAY TO OBJECT WITH FOREACH
+let result = {};
+
+peopleArr.forEach((person) => {
+  if (person.active) {
+   result[person.id] = person.name;
+  }
+});
+
+//console.log(result)
+
 //SORT() AND REVERSE()
 const sortedPrices = prices.sort((a, b) => {
   if (a > b) {
@@ -82,10 +88,10 @@ const sortedPrices = prices.sort((a, b) => {
     return 1;
   }
 });
-console.log(sortedPrices);
+//console.log(sortedPrices);
 
 //reverse the previously sorted array
-console.log(sortedPrices.reverse());
+//console.log(sortedPrices.reverse());
 
 //sort integers
 const numberArray = [5, 6, 3, 2, 1, 8];
@@ -98,15 +104,6 @@ let people = [
   { name: "Anita", surname: "Phills" },
 ];
 
-/* - with {} you have to manually return
-const happyPeople = people.map( (person) => {
-  const isHappy = person.name + " " + "is" + " " + "Happy";
-  return isHappy
-});
-
-console.log(happyPeople);*/
-
-//returns automatically
 const happyPeople = people.map(
   (person) => person.name + " " + "is" + " " + "Happy"
 );
@@ -115,37 +112,8 @@ const happyPeople = people.map(
 //FILTER
 function filterOut(arr) {
   const filteredArr = arr.filter((element) => element % 2 === 0);
-  console.log(filteredArr);
+  //console.log(filteredArr);
 }
 
 filterOut([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
-//MAP AND FILTER (filter active users/map by name)
-const peopleArr = [
-  { id: 1, name: "Anna", age: 23, active: true },
-  { id: 2, name: "Joe", age: 33, active: false },
-  { id: 3, name: "Sara", age: 42, active: false },
-  { id: 4, name: "Noah", age: 18, active: true },
-];
-
-const activePeople = peopleArr
-  .filter((person) => person.active)
-  .map((person) => person.name);
-//console.log(activePeople);
-
-//THE ABOVE WITH REDUCE
-const activePeopleReduced = peopleArr.reduce((acc, e) => {
-  if (e.active) {
-    acc.push(e.name);
-  }
-  return acc;
-}, []);
-//console.log(activePeopleReduced)
-
-//REDUCE TO OBJECT
-const reducedObj = peopleArr.reduce((acc, item) => {
-    acc[item.id] = item.name;
-    return acc;
-}, {});
-
-console.log(reducedObj);

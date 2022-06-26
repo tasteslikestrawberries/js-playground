@@ -11,10 +11,9 @@ const makeServerRequest = new Promise((resolve, reject) => {
 });
 
 makeServerRequest
-  .then((result) => console.log(result))
-  .catch((error) => console.log(error));
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
 
-//mimicking fetching from a server
 const posts = [
   { title: "Post 1", body: "This is post one" },
   { title: "Post 2", body: "This is post two" },
@@ -24,7 +23,7 @@ function getPosts() {
   setTimeout(() => {
     let output = "";
     posts.forEach((post, index) => {
-      output += `<li>${post.title}</li>`;
+      output += `<li>${index} ${post.title}</li>`;
     });
     document.body.innerHTML += output;
   }, 1000);
