@@ -1,4 +1,4 @@
-const {log} = console;
+const { log } = console;
 
 const sumNumbers = (...args) => {
   //rest operator creates an array of parameters (any custom number of parameters)
@@ -60,7 +60,7 @@ of the array will be used as the initial value*/
 
 //log(sum);
 
-//REDUCE ARRAY OF OBJECTS 
+//REDUCE ARRAY OF OBJECTS
 const peopleArr = [
   { id: 1, name: "Anna", age: 23, active: true },
   { id: 2, name: "Joe", age: 33, active: false },
@@ -68,20 +68,20 @@ const peopleArr = [
   { id: 4, name: "Noah", age: 18, active: true },
 ];
 
-    //using map and filter (filter active users/map by name)
-    const activePeople = peopleArr
-      .filter((person) => person.active)
-      .map((person) => person.name);
-    log(activePeople);
+//using map and filter (filter active users/map by name)
+const activePeople = peopleArr
+  .filter((person) => person.active)
+  .map((person) => person.name);
+log(activePeople);
 
-    //THE ABOVE WITH REDUCE
-    const activePeeps = peopleArr.reduce((acc, e) => {
-      if (e.active) {
-        acc.push(e.name);
-      }
-      return acc;
-    }, []);
-    log(activePeeps)
+//THE ABOVE WITH REDUCE
+const activePeeps = peopleArr.reduce((acc, e) => {
+  if (e.active) {
+    acc.push(e.name);
+  }
+  return acc;
+}, []);
+log(activePeeps);
 
 //REDUCE ARRAY TO OBJECT
 const reducedObj = peopleArr.reduce((acc, item) => {
@@ -96,6 +96,7 @@ const reducedObj2 = peopleArr.reduce(
 
 log(reducedObj);
 log(reducedObj2);
+
 
 
 
