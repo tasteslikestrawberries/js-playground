@@ -19,3 +19,6 @@ function test() {
 const arrowTest = () => {
   console.log("test");
 };
+
+console.log(myVariable)
+var myVariable = 'test'
