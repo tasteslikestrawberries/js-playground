@@ -1,6 +1,6 @@
 console.log("WITH FOR LOOP:");
 const myArr = [];
-n = 5;
+let n = 5;
 for (let i = n; i >= 1; i--) {
   myArr.push(i);
   console.log(myArr);
@@ -18,3 +18,6 @@ function countdown(n) {
 }
 
 countdown(5);
+
+
+

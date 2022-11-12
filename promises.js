@@ -73,3 +73,30 @@ const promise4 = fetch("https://jsonplaceholder.typicode.com/users").then(
 Promise.all([promise1, promise2, promise3, promise4]).then((values) =>
   console.log(values)
 );
+
+//FUNCTION THAT TAKES ARRAY OF PROMISES AND RETURNS AN ARRAY OF THEIR RESOLVED VALUES IN SEQUENCE
+//const p1 = setTimeout(() => 'pero' , 200);
+const p1 = new Promise((resolve, reject) => setTimeout(resolve, 500, "p1"));
+const p2 = 42;
+const p3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, "p3");
+});
+
+function returnPromiseSequence1(funcs) {
+  return Promise.all(funcs).then((data) => {
+    console.log(data);
+  });
+}
+
+returnPromiseSequence1([p1, p2, p3]);
+
+async function returnPromiseSequence2(funcs) {
+  const results = [];
+
+  for (let func of funcs) {
+    results.push(await func);
+  }
+  console.log(results);
+}
+
+returnPromiseSequence2([p1, p2, p3]);
